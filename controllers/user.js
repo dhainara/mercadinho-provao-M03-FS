@@ -26,7 +26,7 @@ async function createUserController(req, res) {
     const body = req.body
     const newUser = await userService.createUserService(body)
     const token = authService.generateToken(body.id)
-    return res.status(200).send(newUser, token)
+    return res.status(200).send({message: newUser, token})
   } catch (err) {
     console.log(err)
     return res.status(400).send({ message: err.message })

@@ -2,11 +2,11 @@ import crypto from "crypto"
 import ProductsEntity from "./products.js"
 
 class UserEntity {
-    constructor(user, products) {
+    constructor(user) {
         this.id = user.id ?? crypto.randomUUID()
         this.email = user.email
         this.password = user.password
-        this.products = products.products ?? []
+        this.products = user.products ?? []
     }
 
     validateUser() {
