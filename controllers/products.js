@@ -37,7 +37,7 @@ async function updateProductsController(req, res) {
   try {
     const id = req.params.id
     const products = req.body
-    const updatedProducts = await productsService.createProductsService(id , products);
+    const updatedProducts = await productsService.updateProductsService(id , products);
     res.status(200).send({message: "Products updated", updatedProducts});
   } catch (err) {
     res.status(500).send({ message: err.message});
